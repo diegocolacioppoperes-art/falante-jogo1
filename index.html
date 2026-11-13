@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111b20">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ACOUSTIC FORGE">
+  <meta name="description" content="Tycoon de engenharia eletroacústica e fabricação de alto-falantes.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <title>ACOUSTIC FORGE — Speaker Tycoon</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-lockup">
+        <div class="brand-mark"><span></span><span></span><span></span></div>
+        <div><div class="brand-name">ACOUSTIC <b>FORGE</b></div><div class="brand-sub">LOUDSPEAKER ENGINEERING TYCOON</div></div>
+      </div>
+      <div class="market-ticker"><span class="live-dot"></span><span id="marketHeadline">MERCADO ESTÁVEL</span><i>•</i><span id="marketDetail">Demanda por áudio doméstico em alta</span></div>
+      <div class="top-actions">
+        <div class="week-chip"><small>SEMANA</small><b id="weekValue">01</b></div>
+        <button class="icon-button" id="saveButton" title="Salvar agora">▣</button>
+        <button class="install-button" id="installApp" hidden>INSTALAR APP</button>
+        <button class="advance-button" id="advanceWeek">AVANÇAR SEMANA <span>→</span></button>
+      </div>
+    </header>
+
+    <div class="statusbar">
+      <div class="status-item"><small>CAIXA</small><strong id="cashValue">R$ 50.000</strong></div>
+      <div class="status-item"><small>REPUTAÇÃO</small><strong><span id="repValue">12</span><em>/100</em></strong><div class="mini-meter"><i id="repMeter"></i></div></div>
+      <div class="status-item"><small>FÃS</small><strong id="fansValue">0</strong></div>
+      <div class="status-item"><small>VALOR DA MARCA</small><strong id="brandValue">R$ 8.000</strong></div>
+      <div class="status-note" id="autosaveNote">SALVAMENTO LOCAL ATIVO</div>
+    </div>
+
+    <div class="workspace">
+      <aside class="sidebar">
+        <div class="nav-label">EMPRESA</div>
+        <button class="nav-button active" data-view="office"><span class="nav-icon">▦</span> Escritório <kbd>01</kbd></button>
+        <button class="nav-button" data-view="workbench"><span class="nav-icon">⌁</span> Bancada de engenharia <kbd>02</kbd></button>
+        <button class="nav-button" data-view="products"><span class="nav-icon">◫</span> Produtos <kbd>03</kbd></button>
+        <div class="nav-label spaced">OPERAÇÃO</div>
+        <button class="nav-button" data-view="research"><span class="nav-icon">⌬</span> Pesquisa & Desenvolvimento <kbd>04</kbd></button>
+        <button class="nav-button" data-view="suppliers"><span class="nav-icon">⇄</span> Fornecedores <kbd>05</kbd></button>
+        <button class="nav-button" data-view="contracts"><span class="nav-icon">▤</span> Contratos <kbd>06</kbd></button>
+        <div class="sidebar-bottom">
+          <div class="company-card"><div class="company-emblem">AF</div><div><b>FORGE AUDIO</b><small>FABRICANTE INDEPENDENTE</small></div><span class="tier-pill">STARTUP</span></div>
+          <button class="text-button" id="resetButton">↻ Reiniciar campanha</button>
+          <div class="sidebar-version">ACOUSTIC FORGE <span>v0.9.1 · PROTOTYPE</span></div>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <section class="view active" id="view-office">
+          <div class="page-heading"><div><div class="eyebrow">VISÃO GERAL / SEDE</div><h1>Seu escritório</h1><p>Uma pequena oficina. Um grande plano de engenharia.</p></div><div class="heading-right"><span class="open-status"><i></i> OPERAÇÃO ATIVA</span><span class="muted" id="officeWeekLabel">SEMANA 01</span></div></div>
+          <div class="office-layout">
+            <div class="office-stage panel">
+              <div class="stage-topline"><span>SEDE · NÍVEL 1</span><span>PLANTA ISOMÉTRICA <b>2.5D</b></span></div>
+              <div class="iso-room" aria-label="Escritório isométrico da Forge Audio">
+                <div class="back-wall wall-left"></div><div class="back-wall wall-right"></div>
+                <div class="window-frame"><div class="window-city"></div><div class="window-glow"></div></div>
+                <div class="wall-shelf"><span></span><span></span><span></span><b>FORGE / LAB</b></div>
+                <div class="room-floor"></div>
+                <div class="floor-grid"></div>
+                <div class="desk desk-main"><div class="desk-top"><div class="monitor"><div class="monitor-screen"><i></i><i></i><i></i><b>FFT</b></div></div><div class="speaker-small"></div><div class="keyboard"></div></div><div class="desk-leg one"></div><div class="desk-leg two"></div></div>
+                <div class="engineer"><div class="engineer-head"></div><div class="engineer-body"></div><div class="engineer-arm"></div><div class="engineer-leg"></div></div>
+                <div class="workbench-object"><div class="bench-surface"><div class="cone-object"></div><div class="coil-object"></div><div class="tool-object"></div></div><div class="bench-front"></div></div>
+                <div class="plant-pot"><div class="plant-leaf a"></div><div class="plant-leaf b"></div><div class="plant-leaf c"></div><div class="pot"></div></div>
+                <div class="cabinet"><div></div><div></div><div></div></div>
+                <div class="room-label label-bench">BANCADA DE TESTES <span>↗</span></div>
+                <div class="room-label label-office">P&D / ESCRITÓRIO</div>
+                <div class="stage-shadow"></div>
+              </div>
+              <div class="stage-legend"><span><i class="legend-dot cyan"></i> Área de engenharia</span><span><i class="legend-dot orange"></i> Área administrativa</span><button class="link-button" data-goto="workbench">ABRIR BANCADA ↗</button></div>
+            </div>
+            <div class="office-aside">
+              <div class="panel quick-panel"><div class="panel-heading"><div><div class="eyebrow">PAINEL DA EMPRESA</div><h2>Resumo operacional</h2></div><span class="icon-square">▥</span></div><div class="quick-grid"><div><small>MODELOS NO CATÁLOGO</small><b id="quickModels">0</b></div><div><small>LINHAS ATIVAS</small><b id="quickLines">0</b></div><div><small>CAPACIDADE SEMANAL</small><b id="quickCapacity">12 un.</b></div><div><small>FUNCIONÁRIOS</small><b id="quickStaff">1</b></div></div><div class="quick-footer"><span>PRÓXIMO CICLO</span><b>VENDAS + P&D + PÓS-VENDA</b></div></div>
+              <div class="panel upgrades-panel"><div class="panel-heading"><div><div class="eyebrow">INFRAESTRUTURA</div><h2>Melhorias do escritório</h2></div><span class="count-tag" id="upgradeCount">0 / 3</span></div><div id="officeUpgrades" class="upgrade-list"></div></div>
+              <div class="panel news-panel"><div class="panel-heading"><div><div class="eyebrow">INTELIGÊNCIA DE MERCADO</div><h2>Últimas notícias</h2></div><span class="news-live">LIVE</span></div><div id="newsFeed" class="news-feed"><div class="empty-state">Avance uma semana para receber o primeiro relatório de mercado.</div></div></div>
+            </div>
+          </div>
+          <div class="panel ledger-panel"><div class="panel-heading"><div><div class="eyebrow">ÚLTIMO FECHAMENTO</div><h2>Extrato financeiro</h2></div><span class="muted" id="ledgerWeek">AINDA NÃO HÁ FECHAMENTOS</span></div><div id="ledgerContent" class="ledger-content"><div class="empty-state">Seu primeiro extrato aparecerá após avançar a semana.</div></div></div>
+        </section>
+
+        <section class="view" id="view-workbench">
+          <div class="page-heading"><div><div class="eyebrow">LABORATÓRIO / PROJETO FÍSICO-ACÚSTICO</div><h1>Bancada de engenharia</h1><p>Combine componentes, calcule parâmetros e teste o comportamento do transdutor.</p></div><div class="heading-right"><span class="lab-status"><i></i> SIMULADOR ONLINE</span></div></div>
+          <div class="workbench-toolbar"><div class="project-name"><span class="project-dot"></span><div><small>PROJETO ATUAL</small><b id="projectTitle">Protótipo sem nome</b></div></div><div class="toolbar-actions"><button class="secondary-button" id="resetDesign">RESTAURAR PADRÃO</button><button class="primary-button" id="launchProduct">LANÇAR MODELO <span>↗</span></button></div></div>
+          <div class="bench-grid">
+            <div class="panel component-panel"><div class="panel-heading"><div><div class="eyebrow">CONFIGURAÇÃO FÍSICA</div><h2>Componentes do falante</h2></div><span class="live-tag">LIVE CALC</span></div>
+              <div class="form-section"><div class="section-title"><b>01 / Estrutura</b><span>DIMENSÕES & CARCAÇA</span></div><div class="input-grid"><label>Diâmetro nominal<select id="diameter"><option value="4">4 polegadas</option><option value="5">5 polegadas</option><option value="6" selected>6 polegadas</option><option value="8">8 polegadas</option><option value="10">10 polegadas</option><option value="12">12 polegadas</option><option value="15">15 polegadas</option><option value="18">18 polegadas</option></select></label><label>Material da carcaça<select id="basket"><option value="steel">Aço estampado</option><option value="aluminum">Alumínio fundido</option></select></label></div></div>
+              <div class="form-section"><div class="section-title"><b>02 / Conjunto magnético</b><span>MOTOR</span></div><div class="choice-grid" id="magnetChoices"><button class="choice-card selected" data-value="ferrite"> <span class="choice-symbol magnet-symbol">◎</span><b>Ferrite simples</b><small>Custo equilibrado</small></button><button class="choice-card" data-value="double"> <span class="choice-symbol magnet-symbol">◉</span><b>Ferrite duplo</b><small>Maior fluxo magnético</small></button><button class="choice-card locked" data-value="neo"> <span class="choice-symbol magnet-symbol">✦</span><b>Neodímio</b><small>Bloqueado · P&D</small></button></div></div>
+              <div class="form-section"><div class="section-title"><b>03 / Bobina móvel</b><span>VOICE COIL</span></div><div class="input-grid"><label>Diâmetro da bobina<select id="coilDiameter"><option>0.75</option><option>1.0</option><option>1.25</option><option>1.5</option><option selected>2.0</option><option>2.5</option><option>3.0</option><option>4.0</option></select></label><label>Bitola do fio<select id="wireGauge"><option value="26">26 AWG · fino</option><option value="24" selected>24 AWG</option><option value="22">22 AWG</option><option value="20">20 AWG</option><option value="18">18 AWG · grosso</option></select></label></div><div class="input-grid single"><label>Camadas da bobina <select id="coilLayers"><option value="1">1 camada</option><option value="2" selected>2 camadas</option><option value="3">3 camadas</option><option value="4">4 camadas</option></select></label></div></div>
+              <div class="form-section"><div class="section-title"><b>04 / Conjunto móvel</b><span>CONE & CALOTA</span></div><div class="input-grid"><label>Material do cone<select id="coneMaterial"><option value="paper" selected>Celulose tratada</option><option value="carbon">Fibra de carbono</option><option value="kevlar">Kevlar</option><option value="aluminum">Alumínio</option></select></label><label>Calota / ogiva<select id="dustcap"><option value="paper" selected>Papel</option><option value="aluminum">Alumínio</option><option value="phase">Ogiva / Phase plug</option><option value="inverted">Invertida</option></select></label></div></div>
+              <div class="form-section"><div class="section-title"><b>05 / Suspensão</b><span>CENTRAGEM & BORDA</span></div><div class="input-grid"><label>Centragem (Spider)<select id="spider"><option value="soft">Macia</option><option value="medium" selected>Média</option><option value="stiff">Rígida Pro</option><option value="spl">Dupla SPL</option></select></label><label>Borda (Surround)<select id="surround"><option value="narrow">Estreita</option><option value="medium" selected>Média</option><option value="wide">Mega-Roll</option></select></label></div></div>
+              <div class="form-section enclosure-section"><div class="section-title"><b>06 / Caixa de teste</b><span>ALINHAMENTO</span></div><div class="segmented" id="boxTypes"><button class="selected" data-value="open">Aberta</button><button data-value="sealed">Selada</button><button data-value="ported">Dutada</button></div><div class="input-grid"><label>Volume interno (Vb)<div class="unit-input"><input id="boxVolume" type="number" min="1" max="500" value="20"><span>L</span></div></label><label>Sintonia do duto (Fb)<div class="unit-input"><input id="portTuning" type="number" min="15" max="150" value="48"><span>Hz</span></div></label></div><button class="secondary-button full-width" id="autoTune" disabled>⌁ AUTO-SINTONIA BUTTERWORTH <span class="lock-inline">P&D BLOQUEADO</span></button></div>
+            </div>
+            <div class="bench-right">
+              <div class="panel telemetry-panel"><div class="panel-heading"><div><div class="eyebrow">TELEMETRIA DO PROJETO</div><h2>Parâmetros calculados</h2></div><span class="live-tag">ATUALIZAÇÃO AO VIVO</span></div><div class="spec-grid" id="specGrid"></div><div class="power-limits"><div><span>LIMITE TÉRMICO ESTIMADO</span><b id="thermalLimit">— W</b><small>Bobina até 130 °C</small></div><div class="limit-separator"></div><div><span>LIMITE MECÂNICO ESTIMADO</span><b id="mechanicalLimit">— W</b><small>Excursão até Xmax</small></div><div class="safe-power"><span>POTÊNCIA SEGURA</span><b id="safePower">— W</b></div></div></div>
+              <div class="panel cutaway-panel"><div class="panel-heading"><div><div class="eyebrow">ANÁLISE MECÂNICA / TÉRMICA</div><h2>Corte transversal dinâmico</h2></div><span class="live-tag">VISUALIZAÇÃO</span></div><div class="cutaway-layout"><div class="cutaway-visual"><div class="cutaway-basket"><div class="cutaway-magnet"></div><div class="cutaway-spider"></div><div class="cutaway-coil" id="cutawayCoil"></div><div class="cutaway-cone" id="cutawayCone"></div><div class="cutaway-surround"></div></div><div class="cutaway-axis"></div><small>MEMBRANA · BOBINA · MOTOR</small></div><div class="cutaway-control"><div class="cutaway-readings"><div><small>EXCURSÃO ESTIMADA</small><b id="cutawayExcursion">0,0 mm</b></div><div><small>TEMPERATURA DA BOBINA</small><b id="cutawayTemp">25 °C</b></div></div><label>Potência aplicada <b id="testPowerValue">30 W</b><input id="testPower" type="range" min="0" max="120" value="30" step="1"></label><label>Frequência de teste<select id="testFrequency"><option value="30">30 Hz · subgrave</option><option value="45" selected>45 Hz · ressonância</option><option value="60">60 Hz · grave</option><option value="100">100 Hz · médio-grave</option><option value="500">500 Hz · médio</option></select></label><div class="cutaway-status" id="cutawayStatus">SEM SINAL · MOTOR EM REPOUSO</div></div></div></div>
+              <div class="panel chart-panel"><div class="panel-heading"><div><div class="eyebrow">ANÁLISE ELETROACÚSTICA</div><h2>Resposta do sistema</h2></div><div class="chart-tabs"><button class="selected" data-chart="response">SPL / FREQUÊNCIA</button><button data-chart="impedance">IMPEDÂNCIA Ω</button></div></div><div class="chart-wrap"><canvas id="responseChart" width="960" height="360"></canvas><div class="chart-tooltip" id="chartTooltip"></div></div><div class="chart-legend" id="chartLegend"><span><i class="line-key cyan-line"></i> Resposta simulada</span><span><i class="line-key dash-line"></i> Marcadores Fs / Fb / F3</span><span class="chart-range">20 Hz — 20 kHz · ESCALA LOGARÍTMICA</span></div></div>
+              <div class="panel test-panel"><div class="panel-heading"><div><div class="eyebrow">BANCADA DE TESTES</div><h2>Gerador de sinal DSP</h2></div><span class="audio-indicator" id="audioState">ÁUDIO DESLIGADO</span></div><div class="audio-controls"><button class="test-button" id="pinkNoise">▧ <span>Ruído rosa</span></button><button class="test-button" id="sweepTest">∿ <span>Varredura</span></button><button class="test-button" id="kickTest">◉ <span>Batida</span></button><button class="stop-audio" id="stopAudio">■ PARAR</button></div><div class="dsp-grid"><label>HPF<select id="hpf"><option value="0">Desligado</option><option value="30">30 Hz · 12 dB/oct</option><option value="50">50 Hz · 12 dB/oct</option><option value="80">80 Hz · 24 dB/oct</option><option value="100">100 Hz · 24 dB/oct</option></select></label><label>LPF<select id="lpf"><option value="20000">Desligado</option><option value="12000">12 kHz</option><option value="8000">8 kHz</option><option value="5000">5 kHz</option><option value="3000">3 kHz</option></select></label><label>EQ paramétrico<div class="unit-input"><input id="eqGain" type="number" min="-12" max="12" value="0"><span>dB</span></div></label></div><div class="dsp-foot"><span>SIMULAÇÃO DE FILTROS EM TEMPO REAL</span><span id="dspNote">Saída: dispositivo padrão</span></div></div>
+            </div>
+          </div>
+          <div class="panel design-footer"><div><span class="eyebrow">PRÓXIMO PASSO</span><b>Transforme o protótipo em um produto comercial.</b><small>Defina o posicionamento, divulgue especificações e acompanhe a avaliação dos compradores.</small></div><button class="primary-button" data-goto="products">IR PARA PRODUTOS →</button></div>
+        </section>
+
+        <section class="view" id="view-products"><div class="page-heading"><div><div class="eyebrow">PORTFÓLIO / MERCADO</div><h1>Produtos & linhas</h1><p>Construa uma marca confiável. Promessas exageradas cobram seu preço no pós-venda.</p></div><button class="primary-button" data-goto="workbench">＋ NOVO PROJETO</button></div><div class="product-workspace"><div class="panel launch-panel"><div class="panel-heading"><div><div class="eyebrow">PUBLICAÇÃO COMERCIAL</div><h2>Ficha de lançamento</h2></div><span class="count-tag">EM EDIÇÃO</span></div><label>Nome do modelo<input id="modelName" value="Forge F6 Reference" maxlength="32"></label><div class="input-grid"><label>Nome da linha<input id="lineName" value="Forge F6" maxlength="28"></label><label>Tipo de lançamento<select id="launchType"><option value="new">Modelo inédito (v1)</option><option value="successor">Sucessor (v2, v3...)</option><option value="budget">Versão Budget / Lite</option></select></label></div><label>Finalidade declarada<textarea id="productPurpose" rows="3">Woofer de 6 polegadas para médio-grave, com resposta equilibrada entre 60 Hz e 3.000 Hz.</textarea></label><div class="input-grid"><label>Potência divulgada<div class="unit-input"><input id="claimedPower" type="number" min="1" max="3000" value="100"><span>W RMS</span></div></label><label>Preço de venda<div class="unit-input"><input id="salePrice" type="number" min="20" max="100000" value="349"><span>R$</span></div></label></div><div class="input-grid"><label>Faixa mínima divulgada<div class="unit-input"><input id="claimedMin" type="number" min="10" max="20000" value="55"><span>Hz</span></div></label><label>Faixa máxima divulgada<div class="unit-input"><input id="claimedMax" type="number" min="20" max="30000" value="4000"><span>Hz</span></div></label></div><div class="launch-actions"><button class="secondary-button" id="copyRealSpecs">COPIAR DADOS REAIS ↙</button><button class="primary-button" id="publishProduct">PUBLICAR PRODUTO ↗</button></div><div class="semantic-detection" id="semanticDetection"><small>CLASSIFICADOR SEMÂNTICO LOCAL</small><b>Categoria detectada: <span>Mid-bass</span></b><p>Faixa numérica detectada: 60–3.000 Hz</p></div></div><div class="product-side"><div class="panel score-explainer"><div class="eyebrow">SISTEMA DE AVALIAÇÃO</div><h2>O mercado não compra só watts.</h2><p>Cada produto recebe uma nota de 0 a 10 baseada em cinco critérios: adequação à finalidade, linearidade, potência real, custo-benefício e evolução da linha.</p><div class="score-bars"><div><span>Fidelidade à proposta</span><i><b style="width:20%"></b></i></div><div><span>Linearidade</span><i><b style="width:20%"></b></i></div><div><span>Potência real</span><i><b style="width:20%"></b></i></div><div><span>Custo-benefício</span><i><b style="width:20%"></b></i></div><div><span>Evolução da linha</span><i><b style="width:20%"></b></i></div></div></div><div class="panel catalog-panel"><div class="panel-heading"><div><div class="eyebrow">CATÁLOGO ATIVO</div><h2>Seus modelos</h2></div><span class="count-tag" id="catalogCount">0 MODELOS</span></div><div id="productCatalog" class="product-catalog"><div class="empty-state">Você ainda não lançou nenhum produto.</div></div></div></div></div></section>
+
+        <section class="view" id="view-research"><div class="page-heading"><div><div class="eyebrow">INOVAÇÃO / LABORATÓRIO</div><h1>Pesquisa & desenvolvimento</h1><p>Invista em conhecimento para desbloquear novos materiais e ferramentas.</p></div><div class="research-budget"><small>ORÇAMENTO DE P&D</small><b id="researchBudget">R$ 0 / semana</b></div></div><div class="research-layout"><div class="panel research-panel"><div class="panel-heading"><div><div class="eyebrow">ÁRVORE TECNOLÓGICA</div><h2>Desbloqueios disponíveis</h2></div><span class="count-tag" id="researchCount">0 / 5</span></div><div id="researchTree" class="research-tree"></div></div><div class="panel team-panel"><div class="panel-heading"><div><div class="eyebrow">RECURSOS HUMANOS</div><h2>Equipe de engenharia</h2></div><span class="icon-square">⌬</span></div><div class="team-figure"><div class="avatar-engineer">E</div><div><b>Equipe de P&D</b><small id="engineerDescription">1 pesquisador generalista</small></div></div><div class="team-stats"><div><span>EFICIÊNCIA</span><b id="teamEfficiency">100%</b></div><div><span>PROGRESSO BASE</span><b>10 pts/sem.</b></div></div><button class="primary-button full-width" id="hireEngineer">CONTRATAR PESQUISADOR · R$ 8.000</button><p class="tiny-note">Cada pesquisador aumenta em 10 pontos o progresso semanal de pesquisa e adiciona R$ 450 ao custo operacional semanal.</p><div class="research-progress-wrap"><div class="progress-label"><span>PESQUISA ATUAL</span><b id="activeResearchLabel">Nenhuma</b></div><div class="progress-track"><i id="researchProgressBar"></i></div><small id="researchProgressText">Selecione uma tecnologia na árvore.</small></div></div></div></section>
+
+        <section class="view" id="view-suppliers"><div class="page-heading"><div><div class="eyebrow">SUPRIMENTOS / PROCUREMENT</div><h1>Fornecedores</h1><p>Relacione-se com parceiros, melhore preços e estabilize sua cadeia de produção.</p></div><div class="supplier-tip">FIDELIDADE REDUZ O CUSTO UNITÁRIO</div></div><div class="supplier-grid" id="supplierGrid"></div></section>
+
+        <section class="view" id="view-contracts"><div class="page-heading"><div><div class="eyebrow">VENDAS B2B / OPORTUNIDADES</div><h1>Contratos sob encomenda</h1><p>Entregas técnicas rigorosas, pagamento imediato e reputação corporativa.</p></div><span class="open-status"><i></i> OPORTUNIDADES ROTATIVAS</span></div><div class="contracts-layout"><div class="panel contract-board"><div class="panel-heading"><div><div class="eyebrow">QUADRO DE OPORTUNIDADES</div><h2>Contratos disponíveis</h2></div><span class="count-tag" id="contractCount">3 ATIVOS</span></div><div id="contractList" class="contract-list"></div></div><div class="panel contract-info"><div class="eyebrow">COMO FUNCIONA</div><h2>Precisão gera confiança.</h2><p>Clientes corporativos especificam uma categoria, faixa de frequência e potência mínima. Entregue um modelo compatível para receber pagamento e reputação.</p><div class="contract-stat"><span>Pagamento</span><b>Imediato após aprovação</b></div><div class="contract-stat"><span>Reputação</span><b>+3 a +8 pontos</b></div><div class="contract-stat"><span>Rotatividade</span><b>Novas propostas após entrega</b></div></div></div></section>
+      </main>
+    </div>
+    <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+    <div class="modal-backdrop" id="modalBackdrop"><div class="modal-card" id="modalCard"></div></div>
+    <footer class="app-footer"><span>ACOUSTIC FORGE © 2026</span><span>SIMULAÇÃO EDUCACIONAL · NÃO SUBSTITUI MEDIÇÕES DE LABORATÓRIO</span><span>MADE FOR AUDIO NERDS</span></footer>
+  </div>
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/pwa.js"></script>
+</body>
+</html>
